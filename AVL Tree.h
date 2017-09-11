@@ -364,81 +364,94 @@ int mainAVL()
     //system("clear");
     root = NULL;
     root1=NULL;
-    cout<<"\n\t\t\t\tWELCOME TO AVL TREE"<<endl;
-    cout<<"\t\t\t\t:::::::::::::::::::\n"<<endl;
 
     do
     {
         cout<<"\t\t::::::::::::::::::::::::::::::::::::::::::::::::"<<endl;
         cout<<"\t\t::::Enter 1 to insert a new node::::::::::::::::"<<endl;
-        cout<<"\t\t::::Enter 2 to find the minimum value:::::::::::"<<endl;
-        cout<<"\t\t::::Enter 3 to find the max value:::::::::::::::"<<endl;
-        cout<<"\t\t::::Enter 4 to search a value:::::::::::::::::::"<<endl;
-        cout<<"\t\t::::Enter 5 to delete a value:::::::::::::::::::"<<endl;
-        cout<<"\t\t::::Enter 6 to display Preorder:::::::::::::::::"<<endl;
-        cout<<"\t\t::::Enter 7 to display Inorder::::::::::::::::::"<<endl;
-        cout<<"\t\t::::Enter 8 to display Postorder::::::::::::::::"<<endl;
-        cout<<"\t\t::::Enter 9 to display the height of the tree:::"<<endl;
+        //cout<<"\t\t::::Enter 2 to find the minimum value:::::::::::"<<endl;
+        //cout<<"\t\t::::Enter 3 to find the max value:::::::::::::::"<<endl;
+        cout<<"\t\t::::Enter 2 to search a value:::::::::::::::::::"<<endl;
+        cout<<"\t\t::::Enter 3 to delete a value:::::::::::::::::::"<<endl;
+        cout<<"\t\t::::Enter 4 to display Preorder:::::::::::::::::"<<endl;
+        //cout<<"\t\t::::Enter 7 to display Inorder::::::::::::::::::"<<endl;
+        //cout<<"\t\t::::Enter 8 to display Postorder::::::::::::::::"<<endl;
+        //cout<<"\t\t::::Enter 9 to display the height of the tree:::"<<endl;
         cout<<"\t\t::::Enter 0 to exit:::::::::::::::::::::::::::::"<<endl;
         cout<<"\t\t::::::::::::::::::::::::::::::::::::::::::::::::\n"<<endl;
 
         cout<<"\nEnter the choice: ";
         cin>>choice;
-
+        double tiempo1;
+        double tiempo2;
         switch(choice)
         {
             case 1:
                 cout<<"\n\t\tADDING NEW NODE"<<endl;
                 cout<<"\t\t:::::::::::::\n"<<endl;
-                cout<<"Enter a new value: ";
-                cin>>a;
+
                 srand(time(NULL));
-                for(int i = 0; i < a; i++)
+                for(int i = 0; i < 100; i++)
                 {
-                    int num = 1+rand() %10000;
+                    int num = 1+rand() %20000;
                     //cout<<"Enter element "<<i+1<<": ";
                     //cin>>num;
                     bst.insert(num,root);
-
                 }
+                cout<<"Enter a new value: ";
+                cin>>a;
+                tiempo1 = clock();
+                bst.insert(a,root);
+                tiempo2 = clock();
+                cout << "Tiempo Insertar AVL Tree: \t: " << ((tiempo2 - tiempo1)/CLOCKS_PER_SEC)*1000<<endl;
+
 
                 cout<<"\nThe new value have been added to your tree successfully\n"<<endl;
                 break;
-            case 2:
+            /*case 2:
                 if (root !=NULL)
                 {
                     min=bst.findmin(root);
                     cout<<"\nThe minimum element in the tree is: "<<min->element<<endl;
                 }
                 break;
+
             case 3:
                 if (root !=NULL)
                 {
                     max=bst.findmax(root);
                     cout<<"\nThe maximum element in the tree is: "<<max->element<<endl;
                 }
-                break;
-            case 4:
+                break;*/
+            case 2:
                 cout<<"\nEnter node to search: ";
                 cin>>findele;
                 if (root != NULL)
                 {
+                    tiempo1 = clock();
                     bst.find(findele,root);
+                    tiempo2= clock();
+                    cout << "Tiempo Búsqueda AVL Tree: \t: " << ((tiempo2 - tiempo1)/CLOCKS_PER_SEC)*1000<<endl;
+
                 }
                 break;
-            case 5:
+            case 3:
                 cout<<"\nEnter node to delete: ";
                 cin>>delele;
+                tiempo1 = clock();
                 bst.del(delele,root);
                 bst.inorder(root);
+                tiempo2 = clock();
+                cout << "Tiempo Borrar AVL Tree: \t: " << ((tiempo2 - tiempo2)/CLOCKS_PER_SEC)*1000<<endl;
+
                 cout<<endl;
                 break;
-            case 6:
+            case 4:
                 cout<<"\n\t\tPRE-ORDER TRAVERSAL"<<endl;
                 bst.preorder(root);
                 cout<<endl;
                 break;
-            case 7:
+            /*case 7:
                 cout<<"\n\t\tIN-ORDER TRAVERSAL"<<endl;
                 bst.inorder(root);
                 cout<<endl;
@@ -453,6 +466,7 @@ int mainAVL()
                 cout<<"The height of the tree is: "<<bst.bsheight(root)<<endl;
 
                 break;
+                */
             case 0:
                 cout<<"\n\tThank your for using AVL tree program\n"<<endl;
                 break;
@@ -460,8 +474,8 @@ int mainAVL()
                 cout<<"Sorry! wrong input\n"<<endl;
                 break;
         }
-        system("pause");
-        system("cls");
+        //system("pause");
+        //system("cls");
     }while(choice != 0);
     return 0;
 }
