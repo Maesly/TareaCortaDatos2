@@ -47,6 +47,7 @@ int mainBubble()
     BubbleSort(arr, n);
     double t2 = clock();
     cout << "Tiempo de BubbleSort: "<<((t2-t1)/CLOCKS_PER_SEC)<< endl;
+
     // Display the sorted data.
     cout<<"\nBubble Sorted Data ";
     for (i = 0; i < n; i++)
