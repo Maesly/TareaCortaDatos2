@@ -91,7 +91,7 @@ int mainMerge()
     double t1 = clock();
     MergeSort(arr, 0, n-1);
     double t2 = clock();
-    cout << "Tiempo de BubbleSort: "<<((t2-t1)/CLOCKS_PER_SEC)<< endl;
+    cout << "Tiempo de Merge Sort: "<<((t2-t1)/CLOCKS_PER_SEC)<< endl;
 
     // Printing the sorted data.
     cout<<"\nMerge Sorted Data ";

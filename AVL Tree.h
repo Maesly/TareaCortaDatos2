@@ -57,67 +57,29 @@ int mainAVL()
 {
     int choice, item;
     avlTree avl;
-    while (1)
+    cout<<"Enter value to be inserted: ";
+    cin>>item;
+    int i;
+    //int arr[item];
+    double t1 = clock();
+    for(i = 0; i < item; i++)
     {
-        cout<<"\n---------------------"<<endl;
-        cout<<"AVL Tree Implementation"<<endl;
-        cout<<"\n---------------------"<<endl;
-        cout<<"1.Insert Element into the tree"<<endl;
-        cout<<"2.Display Balanced AVL Tree"<<endl;
-        cout<<"3.InOrder traversal"<<endl;
-        cout<<"4.PreOrder traversal"<<endl;
-        cout<<"5.PostOrder traversal"<<endl;
-        cout<<"6.Exit"<<endl;
-        cout<<"Enter your Choice: ";
-        cin>>choice;
-        switch(choice)
-        {
-            case 1:
-                cout<<"Enter value to be inserted: ";
-                cin>>item;
-                int i;
-                //int arr[item];
-                for(i = 0; i < item; i++)
-                {
-                    int num = 1+rand() %10000;
-                    //arr[i] = num;
-                    root = avl.insert(root, num);
-                }
-
-                break;
-            case 2:
-                if (root == NULL)
-                {
-                    cout<<"Tree is Empty"<<endl;
-                    continue;
-                }
-                cout<<"Balanced AVL Tree:"<<endl;
-                avl.display(root, 1);
-                break;
-            case 3:
-                cout<<"Inorder Traversal:"<<endl;
-                avl.inorder(root);
-                cout<<endl;
-                break;
-            case 4:
-                cout<<"Preorder Traversal:"<<endl;
-                avl.preorder(root);
-                cout<<endl;
-                break;
-            case 5:
-                cout<<"Postorder Traversal:"<<endl;
-                avl.postorder(root);
-                cout<<endl;
-                break;
-            case 6:
-                exit(1);
-                break;
-            default:
-                cout<<"Wrong Choice"<<endl;
-        }
+        int num = 1+rand() %10000;
+        //arr[i] = num;
+        root = avl.insert(root, num);
     }
+    double t2 = clock();
+    cout << "Tiempo de BubbleSort: "<<((t2-t1)/CLOCKS_PER_SEC)<< endl;
+    if (root == NULL)
+    {
+        cout<<"Tree is Empty"<<endl;
+
+    }
+    cout<<"Balanced AVL Tree:"<<endl;
+    avl.display(root, 1);
     return 0;
-}
+    }
+
 
 /*
  * Height of AVL Tree

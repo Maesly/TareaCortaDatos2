@@ -45,7 +45,7 @@ int mainSelection()
     double t1 = clock();
     SelectionSort(arr, n);
     double t2 = clock();
-    cout << "Tiempo de BubbleSort: "<<((t2-t1)/CLOCKS_PER_SEC)<< endl;
+    cout << "Tiempo de SelectioSort: "<<((t2-t1)/CLOCKS_PER_SEC)<< endl;
     // Display the sorted data.
     cout<<"\nSelection Sorted Data ";
     for (i = 0; i < n; i++)
