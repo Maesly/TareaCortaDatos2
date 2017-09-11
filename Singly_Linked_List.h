@@ -175,19 +175,66 @@ int mainSinglyLinkedList(){
     cout << "\n\n MOSTRANDO LISTA\n\n";
     reportarLista(lista);
 
-    cout << "\n Valor a buscar: ";
-    cin >> dato;
 
     /**
      * t1 y t2 miden el tiempo que tarda el algoritmo
      * en buscar un elemento
      * en la lista.
      */
-    t1 = clock();
-    buscarElemento(lista, dato);
-    t2 = clock();
-    cout << "Tiempo Búsqueda Lista Simple: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
 
+    int opcion = 0;
+    while(opcion !=987){
+        cout<<"1.Buscar un Elemento"<<endl;
+        cout<<"2.Eliminar Elemento"<<endl;
+        cout<<"3.Ingresar Elemento"<<endl;
+        cout<<"4.Salir"<<endl;
+        cin>>opcion;
+
+        switch (opcion){
+
+            case 1:
+
+                cout << "\n Valor a buscar: ";
+                cin >> dato;
+
+                t1 = clock();
+                buscarElemento(lista, dato);
+                t2 = clock();
+                cout << "Tiempo Búsqueda: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
+                break;
+
+            case 2:
+                cout<<"\n Mostrando Lista"<<endl;
+                reportarLista(lista);
+                cout << "\n Valor a Eliminar: ";
+                cin >> dato;
+                t1 = clock();
+                eliminarElemento(lista,dato);
+                t2 = clock();
+                cout << "Tiempo Eliminar: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
+                break;
+
+
+            case 3:
+                cout << "\n Valor a Ingresar: ";
+                cin >> dato;
+                t1 = clock();
+                insertarInicio(lista,dato);
+                t2 = clock();
+                reportarLista(lista);
+                cout << "Tiempo Ingreso: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
+
+                break;
+            case 4:
+                opcion = 987;
+                break;
+
+            default:
+                cout<<"Opcion Incorrecta"<<endl;
+
+        }
+
+    }
 
 }
 

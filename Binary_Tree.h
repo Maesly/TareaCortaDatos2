@@ -208,10 +208,60 @@ int mainBinary(){
     /**
      * T1 y T2 miden el tiempo que tarda en buscar un elemento
      */
-    t1 = clock();
-    busquedaRec(arbol,dato);
-    t2 = clock();
-    cout << "Tiempo Búsqueda Árbol Binario: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
+    int opcion = 0;
+    while(opcion !=987){
+        cout<<"1.Buscar un Elemento"<<endl;
+        cout<<"2.Eliminar Elemento"<<endl;
+        cout<<"3.Ingresar Elemento"<<endl;
+        cout<<"4.Salir"<<endl;
+        cin>>opcion;
+
+        switch (opcion){
+
+            case 1:
+
+                cout << "\n Valor a buscar: ";
+                cin >> dato;
+
+                t1 = clock();
+                busquedaRec(arbol,dato);
+                t2 = clock();
+                cout << "Tiempo Búsqueda: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
+                break;
+
+            case 2:
+                cout<<"\n Mostrando Lista"<<endl;
+                Orden(arbol);
+                cout << "\n Valor a Eliminar: ";
+                cin >> dato;
+                t1 = clock();
+                elimina(arbol,dato);
+                t2 = clock();
+                cout << "Tiempo Eliminar: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
+                break;
+
+
+            case 3:
+                cout << "\n Valor a Ingresar: ";
+                cin >> dato;
+                t1 = clock();
+                insertar(arbol,dato);
+                t2 = clock();
+                Orden(arbol);
+                cout << "Tiempo Ingreso: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
+
+                break;
+            case 4:
+                opcion = 987;
+                break;
+
+            default:
+                cout<<"Opcion Incorrecta"<<endl;
+
+        }
+
+    }
+
 
 }
 
