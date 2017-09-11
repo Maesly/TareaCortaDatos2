@@ -63,6 +63,7 @@ list* InsertinList(list *head, int n)
 int mainInsertion()
 {
     int n, i, num;
+    double t1,t2;
     // Declaring head of the linked list.
     list *head = new list;
     head = NULL;
@@ -71,6 +72,8 @@ int mainInsertion()
     cin>>n;
     int arr[n];
     srand(time(NULL));
+
+    t1=clock();
     for(i = 0; i < n; i++)
     {
         int num = 1+rand() %10000;
@@ -80,6 +83,8 @@ int mainInsertion()
         // Inserting num in the list.
         head = InsertinList(head, num);
     }
+    t2 = clock();
+    cout << "Insertion Sort TIME: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
 
     // Display the sorted data.
     cout<<"\n Elementos del Insertion Sorted ";

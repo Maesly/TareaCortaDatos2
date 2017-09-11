@@ -49,9 +49,13 @@ int mainBubble()
     cout << "Tiempo de BubbleSort: "<<((t2 - t1)/CLOCKS_PER_SEC)*1000<< endl;
 
     // Display the sorted data.
+    /**
+     *
+
     cout<<"\nDatos del Bubble Sort";
     for (i = 0; i < n; i++)
         cout<<"->"<<arr[i];
+    */
 
     return 0;
 }

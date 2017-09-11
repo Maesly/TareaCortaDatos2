@@ -94,10 +94,11 @@ int mainMerge()
     cout << "Tiempo de Merge Sort: "<<((t2 - t1)/CLOCKS_PER_SEC)*1000<< endl;
 
     // Printing the sorted data.
+    /**
     cout<<"\nElementos del Merge Sort ";
     for (i = 0; i < n; i++)
         cout<<"->"<<arr[i];
-
+    */
     return 0;
 }
 #endif //TAREA_MERGESORT_H

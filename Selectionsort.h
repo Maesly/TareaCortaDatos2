@@ -47,10 +47,11 @@ int mainSelection()
     double t2 = clock();
     cout << "Tiempo de SelectioSort: "<<((t2 - t1)/CLOCKS_PER_SEC)*1000<< endl;
     // Display the sorted data.
+    /**
     cout<<"\n Elementos Selection Sorted ";
     for (i = 0; i < n; i++)
         cout<<"->"<<arr[i];
-
+   */
     return 0;
 }
 
