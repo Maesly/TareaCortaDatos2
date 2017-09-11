@@ -71,4 +71,47 @@ void reportarLista(Tlista lista)
 }
 
 
+
+int mainSinglyLinkedList(){
+
+
+    Tlista lista = NULL;
+
+    int n;
+    double t1,t2;
+
+    cout << "\n\t\t LISTA ENLAZADA SIMPLE \n\n";
+
+    int dato;
+
+    cout << " Numero de elementos de la lista:  ";
+    cin >> n;
+    cout << endl;
+
+    srand(time(NULL));
+
+    for (int i = 0; i < n; i++) {
+        int x = rand() % 100;
+        insertarInicio(lista, x);
+    }
+    cout << "\n\n MOSTRANDO LISTA\n\n";
+    reportarLista(lista);
+
+    cout << "\n Valor a buscar: ";
+    cin >> dato;
+
+    /**
+     * t1 y t2 miden el tiempo que tarda el algoritmo
+     * en buscar un elemento
+     * en la lista.
+     */
+    t1 = clock();
+    buscarElemento(lista, dato);
+    t2 = clock();
+    cout << "Tiempo Búsqueda Lista Simple: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
+
+
+}
+
+
 #endif //TAREA_SINGLY_LINKED_LIST_H

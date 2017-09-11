@@ -8,8 +8,8 @@
 int main(){
     //mainBubble();
     //mainInsertion();
-    mainAVL();
+    //mainAVL();
     //mainMerge();
-    //mainSelection();
+    mainSelection();
 
 }

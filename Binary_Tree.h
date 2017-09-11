@@ -131,6 +131,54 @@ void verArbol(ABB arbol, int n)
     verArbol(arbol->izq, n+1);
 }
 
+/**
+ *
+ * ERASE
+ */
+
+
+
+int mainBinary(){
+    ABB arbol = NULL;   // Se crea un árbol
+
+    int n;
+    int dato;
+    double t1,t2;
+
+    cout << "\n\t\t   ARBOL BINARIO DE BUSQUEDA   \n\n";
+
+    cout << " Numero de nodos del arbol:  "; //Cantidad de elementos que va a tener el árbol.
+    cin >> n;
+    cout << endl;
+
+    srand(time(NULL));    //srand(time(NULL)) para evitar que rand() devuelva los mismos números.
+    for(int i=0; i<n; i++)
+    {
+        int x = rand() % 1000;// % 1000 para que retorne números random <1000.
+        insertar( arbol, x); // inserta el número en el árbol
+    }
+
+    cout << "\n Mostrando ABB \n\n";
+    verArbol( arbol, 0);    //Función que realiza la gráfica del árbol
+
+    cout << "\n Recorridos del ABB";
+    cout << "\n\n En orden   :  ";   Orden(arbol);
+    cout << "\n\n Pre Orden  :  ";   preOrden(arbol);
+    cout << "\n\n Post Orden :  ";   postOrden(arbol);
+
+    cout << "\n Valor a buscar: ";  //Buscar elemento
+    cin >> dato;
+
+    /**
+     * T1 y T2 miden el tiempo que tarda en buscar un elemento
+     */
+    t1 = clock();
+    busquedaRec(arbol,dato);
+    t2 = clock();
+    cout << "Tiempo Búsqueda Árbol Binario: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
+
+}
+
 
 
 
