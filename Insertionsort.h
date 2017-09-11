@@ -85,7 +85,7 @@ int mainInsertion()
     }
     t2 = clock();
     cout << "Insertion Sort TIME: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
-
+/**
     // Display the sorted data.
     cout<<"\n Elementos del Insertion Sorted ";
     while(head != NULL)
@@ -93,7 +93,7 @@ int mainInsertion()
         cout<<"->"<<head->data;
         head = head->next;
     }
-
+*/
     return 0;
 }
 #endif //TAREA_INSERTIONSORT_H
