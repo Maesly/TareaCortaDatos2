@@ -132,12 +132,48 @@ void verArbol(ABB arbol, int n)
 }
 
 /**
+ * Unir
+ */
+
+ABB unirABB(ABB izq, ABB der)
+{
+    if(izq==NULL) return der;
+    if(der==NULL) return izq;
+
+    ABB centro = unirABB(izq->der, der->izq);
+    izq->der = centro;
+    der->izq = izq;
+    return der;
+}
+
+/**
  *
  * ERASE
  */
 
 
+void elimina(ABB &arbol, int x)
+{
+    if(arbol==NULL) return;
 
+    if(x<arbol->nro)
+        elimina(arbol->izq, x);
+    else if(x>arbol->nro)
+        elimina(arbol->der, x);
+
+    else
+    {
+        ABB p = arbol;
+        arbol = unirABB(arbol->izq, arbol->der);
+        delete p;
+    }
+}
+
+
+
+/**
+ * Main
+ */
 int mainBinary(){
     ABB arbol = NULL;   // Se crea un árbol
 
