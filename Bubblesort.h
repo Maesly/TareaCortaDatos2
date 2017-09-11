@@ -30,7 +30,7 @@ void BubbleSort (int arr[], int n)
 int mainBubble()
 {
     int n, i;
-    cout<<"\nEnter the number of data element to be sorted: ";
+    cout<<"\nCantidad de elementos: ";
     cin>>n;
 
     int arr[n];
@@ -46,10 +46,10 @@ int mainBubble()
     double t1 = clock();
     BubbleSort(arr, n);
     double t2 = clock();
-    cout << "Tiempo de BubbleSort: "<<((t2-t1)/CLOCKS_PER_SEC)<< endl;
+    cout << "Tiempo de BubbleSort: "<<((t2 - t1)/CLOCKS_PER_SEC)*1000<< endl;
 
     // Display the sorted data.
-    cout<<"\nBubble Sorted Data ";
+    cout<<"\nDatos del Bubble Sort";
     for (i = 0; i < n; i++)
         cout<<"->"<<arr[i];
 

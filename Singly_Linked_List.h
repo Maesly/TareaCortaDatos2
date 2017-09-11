@@ -111,8 +111,8 @@ void eliminarElemento(Tlista &lista, int valor)
  * Eliminar Repetidos
  */
 
-void eliminaRepetidos(Tlista &lista, int valor)
-{
+void eliminaRepetidos(Tlista &lista, int valor){
+
     Tlista q, ant;
     q = lista;
     ant = lista;

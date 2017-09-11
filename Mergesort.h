@@ -77,7 +77,7 @@ void MergeSort(int *a, int low, int high)
 int mainMerge()
 {
     int n, i;
-    cout<<"\nEnter the number of data element to be sorted: ";
+    cout<<"\nCantidad de elementos: ";
     cin>>n;
 
     int arr[n];
@@ -91,10 +91,10 @@ int mainMerge()
     double t1 = clock();
     MergeSort(arr, 0, n-1);
     double t2 = clock();
-    cout << "Tiempo de Merge Sort: "<<((t2-t1)/CLOCKS_PER_SEC)<< endl;
+    cout << "Tiempo de Merge Sort: "<<((t2 - t1)/CLOCKS_PER_SEC)*1000<< endl;
 
     // Printing the sorted data.
-    cout<<"\nMerge Sorted Data ";
+    cout<<"\nElementos del Merge Sort ";
     for (i = 0; i < n; i++)
         cout<<"->"<<arr[i];
 

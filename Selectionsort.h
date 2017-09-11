@@ -31,7 +31,7 @@ void SelectionSort (int arr[], int n)
 int mainSelection()
 {
     int n, i;
-    cout<<"\nEnter the number of data element to be sorted: ";
+    cout<<"\nCantidad de elementos: ";
     cin>>n;
 
     int arr[n];
@@ -45,9 +45,9 @@ int mainSelection()
     double t1 = clock();
     SelectionSort(arr, n);
     double t2 = clock();
-    cout << "Tiempo de SelectioSort: "<<((t2-t1)/CLOCKS_PER_SEC)<< endl;
+    cout << "Tiempo de SelectioSort: "<<((t2 - t1)/CLOCKS_PER_SEC)*1000<< endl;
     // Display the sorted data.
-    cout<<"\nSelection Sorted Data ";
+    cout<<"\n Elementos Selection Sorted ";
     for (i = 0; i < n; i++)
         cout<<"->"<<arr[i];
 

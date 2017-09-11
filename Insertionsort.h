@@ -67,7 +67,7 @@ int mainInsertion()
     list *head = new list;
     head = NULL;
 
-    cout<<"\nEnter the number of data element to be sorted: ";
+    cout<<"\nCantidad de elementos: ";
     cin>>n;
     int arr[n];
     srand(time(NULL));
@@ -82,7 +82,7 @@ int mainInsertion()
     }
 
     // Display the sorted data.
-    cout<<"\nInsertion Sorted Data ";
+    cout<<"\n Elementos del Insertion Sorted ";
     while(head != NULL)
     {
         cout<<"->"<<head->data;
