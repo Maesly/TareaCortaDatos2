@@ -33,6 +33,10 @@ void insertarInicio(Tlista &lista, int valor)
 }
 
 /**
+ * 
+ */
+
+/**
  * Su función es buscar el elemento deseado
  * dentro de una lista.
  */
@@ -70,7 +74,81 @@ void reportarLista(Tlista lista)
     }
 }
 
+/**
+ * Eliminar Elemento
+ *
+ */
 
+void eliminarElemento(Tlista &lista, int valor)
+{
+    Tlista p, ant;
+    p = lista;
+
+    if(lista!=NULL)
+    {
+        while(p!=NULL)
+        {
+            if(p->nro==valor)
+            {
+                if(p==lista)
+                    lista = lista->sgte;
+                else
+                    ant->sgte = p->sgte;
+
+                delete(p);
+                return;
+            }
+            ant = p;
+            p = p->sgte;
+        }
+    }
+    else
+        cout<<" Lista vacia..!";
+}
+
+/**
+ *
+ * Eliminar Repetidos
+ */
+
+void eliminaRepetidos(Tlista &lista, int valor)
+{
+    Tlista q, ant;
+    q = lista;
+    ant = lista;
+
+    while(q!=NULL)
+    {
+        if(q->nro==valor)
+        {
+            if(q==lista) // primero elemento
+            {
+                lista = lista->sgte;
+                delete(q);
+                q = lista;
+            }
+            else
+            {
+                ant->sgte = q->sgte;
+                delete(q);
+                q = ant->sgte;
+            }
+        }
+        else
+        {
+            ant = q;
+            q = q->sgte;
+        }
+
+    }// fin del while
+
+    cout<<"\n\n Valores eliminados..!"<<endl;
+}
+
+/**
+ *
+ * Main
+ */
 
 int mainSinglyLinkedList(){
 
