@@ -404,9 +404,9 @@ int mainAVL()
                 tiempo1 = clock();
                 bst.insert(a,root);
                 tiempo2 = clock();
+                bst.inorder(root);
                 cout << "Tiempo Insertar AVL Tree: \t: " << ((tiempo2 - tiempo1)/CLOCKS_PER_SEC)*1000<<endl;
-
-                cout<<"\nThe new value have been added to your tree successfully\n"<<endl;
+               // cout<<"\nThe new value have been added to your tree successfully\n"<<endl;
                 break;
             /*case 2:
                 if (root !=NULL)
@@ -442,7 +442,7 @@ int mainAVL()
                 bst.del(delele,root);
                 tiempo2 = clock();
                 bst.inorder(root);
-                cout << "\n\nTiempo Borrar AVL Tree: \t: " << ((tiempo2 - tiempo2)/CLOCKS_PER_SEC)*1000<<endl;
+                cout << "\n\nTiempo Borrar AVL Tree: \t: " << ((tiempo2 - tiempo1)/CLOCKS_PER_SEC)*1000<<endl;  //estaba mal esta funcion no estaba usando la variable tiempo 1
 
                 cout<<endl;
                 break;
