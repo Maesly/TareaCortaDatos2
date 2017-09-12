@@ -169,11 +169,12 @@ int mainSinglyLinkedList(){
     srand(time(NULL));
 
     for (int i = 0; i < n; i++) {
-        int x = rand() % 100;
+        int x = rand() % 10000;
         insertarInicio(lista, x);
     }
     cout << "\n\n MOSTRANDO LISTA\n\n";
     reportarLista(lista);
+    cout<<"\n"<<endl;
 
 
     /**
@@ -200,7 +201,7 @@ int mainSinglyLinkedList(){
                 t1 = clock();
                 buscarElemento(lista, dato);
                 t2 = clock();
-                cout << "Tiempo Búsqueda: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
+                cout << "\nTiempo Búsqueda: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
                 break;
 
             case 2:
@@ -211,7 +212,7 @@ int mainSinglyLinkedList(){
                 t1 = clock();
                 eliminarElemento(lista,dato);
                 t2 = clock();
-                cout << "Tiempo Eliminar: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
+                cout << "\nTiempo Eliminar: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
                 break;
 
 
@@ -222,7 +223,7 @@ int mainSinglyLinkedList(){
                 insertarInicio(lista,dato);
                 t2 = clock();
                 reportarLista(lista);
-                cout << "Tiempo Ingreso: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
+                cout << "\nTiempo Ingreso: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
 
                 break;
             case 4:

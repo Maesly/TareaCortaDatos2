@@ -190,26 +190,28 @@ int mainBinary(){
     srand(time(NULL));    //srand(time(NULL)) para evitar que rand() devuelva los mismos números.
     for(int i=0; i<n; i++)
     {
-        int x = rand() % 1000;// % 1000 para que retorne números random <1000.
+        int x = rand() % 10000;// % 1000 para que retorne números random <1000.
         insertar( arbol, x); // inserta el número en el árbol
     }
 
     cout << "\n Mostrando ABB \n\n";
     verArbol( arbol, 0);    //Función que realiza la gráfica del árbol
 
+    cout<< "\n\n"<<endl;
     cout << "\n Recorridos del ABB";
     cout << "\n\n En orden   :  ";   Orden(arbol);
-    cout << "\n\n Pre Orden  :  ";   preOrden(arbol);
-    cout << "\n\n Post Orden :  ";   postOrden(arbol);
+    //cout << "\n\n Pre Orden  :  ";   preOrden(arbol);
+    //cout << "\n\n Post Orden :  ";   postOrden(arbol);
 
-    cout << "\n Valor a buscar: ";  //Buscar elemento
-    cin >> dato;
+   // cout << "\n Valor a buscar: ";  //Buscar elemento
+    //cin >> dato;
 
     /**
      * T1 y T2 miden el tiempo que tarda en buscar un elemento
      */
     int opcion = 0;
     while(opcion !=987){
+        cout<<"\n"<<endl;
         cout<<"1.Buscar un Elemento"<<endl;
         cout<<"2.Eliminar Elemento"<<endl;
         cout<<"3.Ingresar Elemento"<<endl;
@@ -226,7 +228,7 @@ int mainBinary(){
                 t1 = clock();
                 busquedaRec(arbol,dato);
                 t2 = clock();
-                cout << "Tiempo Búsqueda: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
+                cout << "\n\nTiempo Búsqueda: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
                 break;
 
             case 2:
@@ -237,7 +239,7 @@ int mainBinary(){
                 t1 = clock();
                 elimina(arbol,dato);
                 t2 = clock();
-                cout << "Tiempo Eliminar: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
+                cout << "\n\nTiempo Eliminar: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
                 break;
 
 
@@ -248,7 +250,7 @@ int mainBinary(){
                 insertar(arbol,dato);
                 t2 = clock();
                 Orden(arbol);
-                cout << "Tiempo Ingreso: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
+                cout << "\n\nTiempo Ingreso: \t: " << ((t2 - t1)/CLOCKS_PER_SEC)*1000<<endl;
 
                 break;
             case 4:
