@@ -405,7 +405,7 @@ int mainAVL()
                 bst.insert(a,root);
                 tiempo2 = clock();
                 bst.inorder(root);
-                cout << "Tiempo Insertar AVL Tree: \t: " << ((tiempo2 - tiempo1)/CLOCKS_PER_SEC)*1000<<endl;
+                cout << "\n\nTiempo Insertar AVL Tree: \t: " << ((tiempo2 - tiempo1)/CLOCKS_PER_SEC)*1000<<endl;
                // cout<<"\nThe new value have been added to your tree successfully\n"<<endl;
                 break;
             /*case 2:
@@ -431,7 +431,7 @@ int mainAVL()
                     tiempo1 = clock();
                     bst.find(findele,root);
                     tiempo2= clock();
-                    cout << "Tiempo Búsqueda AVL Tree: \t: " << ((tiempo2 - tiempo1)/CLOCKS_PER_SEC)*1000<<endl;
+                    cout << "\n\nTiempo Búsqueda AVL Tree: \t: " << ((tiempo2 - tiempo1)/CLOCKS_PER_SEC)*1000<<endl;
 
                 }
                 break;
