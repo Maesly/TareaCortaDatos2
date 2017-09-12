@@ -365,6 +365,17 @@ int mainAVL()
     root = NULL;
     root1=NULL;
 
+    int cant = 0;
+    cout<<"Cuanta Cantidad de Elementos: ";
+    cin>>cant;
+    for(int i = 0; i < cant; i++)
+    {
+        int num = 1+rand() %20000;
+        //cout<<"Enter element "<<i+1<<": ";
+        //cin>>num;
+        bst.insert(num,root);
+    }
+
     do
     {
         cout<<"\t\t::::::::::::::::::::::::::::::::::::::::::::::::"<<endl;
@@ -386,25 +397,14 @@ int mainAVL()
         double tiempo2;
         switch(choice)
         {
-            case 1:
-                cout<<"\n\t\tADDING NEW NODE"<<endl;
-                cout<<"\t\t:::::::::::::\n"<<endl;
 
-                srand(time(NULL));
-                for(int i = 0; i < 100; i++)
-                {
-                    int num = 1+rand() %20000;
-                    //cout<<"Enter element "<<i+1<<": ";
-                    //cin>>num;
-                    bst.insert(num,root);
-                }
+            case 1:
                 cout<<"Enter a new value: ";
                 cin>>a;
                 tiempo1 = clock();
                 bst.insert(a,root);
                 tiempo2 = clock();
                 cout << "Tiempo Insertar AVL Tree: \t: " << ((tiempo2 - tiempo1)/CLOCKS_PER_SEC)*1000<<endl;
-
 
                 cout<<"\nThe new value have been added to your tree successfully\n"<<endl;
                 break;
@@ -440,9 +440,9 @@ int mainAVL()
                 cin>>delele;
                 tiempo1 = clock();
                 bst.del(delele,root);
-                bst.inorder(root);
                 tiempo2 = clock();
-                cout << "Tiempo Borrar AVL Tree: \t: " << ((tiempo2 - tiempo2)/CLOCKS_PER_SEC)*1000<<endl;
+                bst.inorder(root);
+                cout << "\n\nTiempo Borrar AVL Tree: \t: " << ((tiempo2 - tiempo2)/CLOCKS_PER_SEC)*1000<<endl;
 
                 cout<<endl;
                 break;
