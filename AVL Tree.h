@@ -93,7 +93,7 @@ void bstree::insert(int x,nodeptr &p)
         }
         else
         {
-            cout<<"Element Exists\n"<<endl;
+           // cout<<"Element Exists\n"<<endl;  esta linea lo que hace es que si el elemento ya esta en la lista no lo repite.
         }
     }
     int m,n,d;
@@ -273,12 +273,15 @@ void bstree::preorder(nodeptr p)
 // Inorder Printing
 void bstree::inorder(nodeptr p)
 {
+    int cantele = 0; //contador
     if (p!=NULL)
     {
         inorder(p->left);
         cout<<p->element<<"\t";
+        cantele +=1; //contador
         inorder(p->right);
     }
+
 }
 
 // PostOrder Printing
@@ -370,7 +373,7 @@ int mainAVL()
     cin>>cant;
     for(int i = 0; i < cant; i++)
     {
-        int num = 1+rand() %20000;
+        int num = 1+rand()%10000;
         //cout<<"Enter element "<<i+1<<": ";
         //cin>>num;
         bst.insert(num,root);
@@ -431,6 +434,7 @@ int mainAVL()
                     tiempo1 = clock();
                     bst.find(findele,root);
                     tiempo2= clock();
+                    bst.inorder(root);
                     cout << "\n\nTiempo Búsqueda AVL Tree: \t: " << ((tiempo2 - tiempo1)/CLOCKS_PER_SEC)*1000<<endl;
 
                 }
